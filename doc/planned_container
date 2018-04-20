@@ -1,0 +1,141 @@
+Only common images listed below and common openstack images used by zvm:
+
+dependency images:
+mariadb
+rabbitmq
+memcached
+rsyslog
+fluentd
+
+openstack image:
+nova
+
+{
+  "base": [
+    "nova-zvm",
+    {
+      "openstack-base": [
+        {
+          "novajoin-base": [
+            "novajoin-server",
+            "novajoin-notifier"
+          ]
+        },
+        {
+          "nova-base": [
+            "nova-conductor",
+            "nova-ssh",
+            "nova-api",
+            "nova-compute", # zvm
+            "nova-scheduler",
+            "nova-placement-api"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+neutron
+
+{
+  "base": [
+    {
+      "openstack-base": [
+        {
+          "neutron-base": [
+            "neutron-server",
+            "neutron-zvm-agent"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+cinder
+
+{
+  "base": [
+    {
+      "openstack-base": [
+        {
+          "cinder-base": [
+            "cinder-backup",
+            "cinder-api",
+            "cinder-volume",
+            "cinder-scheduler"
+          ]
+        
+      ]
+    }
+  ]
+}
+
+keystone
+
+{
+  "base": [
+    {
+      "openstack-base": [
+        {
+          "barbican-base": [
+            "barbican-keystone-listener"
+          ]
+        },
+        {
+          "keystone-base": [
+            "keystone-fernet",
+            "keystone-ssh",
+            "keystone"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+glance
+{
+  "base": [
+    {
+      "openstack-base": [
+        {
+          "glance-base": [
+            "glance-api",
+            "glance-registry"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+barbican
+
+{
+  "base": [
+    {
+      "openstack-base": [
+        {
+          "barbican-base": [
+            "barbican-api",
+            "barbican-keystone-listener",
+            "barbican-worker"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+horizon
+{
+  "base": [
+    {
+      "openstack-base": [
+        "horizon"
+      ]
+    }
+  ]
+}
