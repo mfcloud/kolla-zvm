@@ -551,6 +551,10 @@ SOURCES = {
         'type': 'url',
         'location': ('$tarballs_base/neutron-vpnaas/'
                      'neutron-vpnaas-master.tar.gz')},
+    'neutron-base-plugin-zvm-agent': {
+        'type': 'url',
+        'location': ('$tarballs_base/networking-zvm/'
+                     'networking-zvm-master.tar.gz')},
     'neutron-bgp-dragent': {
         'type': 'url',
         'location': ('$tarballs_base/neutron-dynamic-routing/'
@@ -604,9 +608,12 @@ SOURCES = {
         'location': ('$tarballs_base/networking-ovn/'
                      'networking-ovn-master.tar.gz')},
     'nova-base': {
-        'type': 'url',
-        'location': ('$tarballs_base/nova/'
-                     'nova-master.tar.gz')},
+        'type': 'local',
+        'location': '/root/kolla/nova.tar.gz'},
+        #'type': 'url',
+        #'location': ('https://review.openstack.org/changes/543344/revisions/ca9a20f0f8bf9d07d140058df3fd7e243e1d757d/archive?format=tgz')},
+        #'location': ('$tarballs_base/nova/'
+        #             'nova-master.tar.gz')},
     'nova-base-plugin-blazar': {
         'type': 'url',
         'location': ('$tarballs_base/blazar-nova/'
